@@ -32,33 +32,6 @@ void DFS_2(int vertex) {
 }
 
 
-void DFS_1(int st)
-{
-	stack <int> ss;
-	visited[st] = true;
-	printf("%d ", st + 1);
-	ss.push(st);
-	int v;
-
-	while (!ss.empty())
-	{
-
-		v = ss.top();
-		ss.pop();
-		for (i = 0; i < m; i++)
-		{
-
-			if ((graph[v][i] == 1) && (visited[i] == false))
-			{
-
-				visited[i] = 1;
-				ss.push(i);
-				printf("%d ", i + 1);
-			}
-		}
-
-	}
-}
 
 void DFS(int st)
 {
@@ -76,7 +49,7 @@ void DFS(int st)
 void DFS_main()
 {
 	setlocale(LC_ALL, "Rus");
-	printf("Введите размерность матрицы: ");
+	printf("Г‚ГўГҐГ¤ГЁГІГҐ Г°Г Г§Г¬ГҐГ°Г­Г®Г±ГІГј Г¬Г ГІГ°ГЁГ¶Г»: ");
 	scanf_s("%d", &m);
 
 	graph = new int*[m];
@@ -85,42 +58,42 @@ void DFS_main()
 	}
 
 	int start;
-	printf("Матрица смежности:\n");
+	printf("ГЊГ ГІГ°ГЁГ¶Г  Г±Г¬ГҐГ¦Г­Г®Г±ГІГЁ:\n");
 	srand(time(NULL));
 	for (i = 0; i < m; ++i)
 		for (j = i; j < m; ++j) {
 			graph[i][j] = graph[j][i] = rand() % 2;
-			graph[i][i] = graph[j][j] = 0; // чтобы петля(узел) не создавалась
+			graph[i][i] = graph[j][j] = 0; // Г·ГІГ®ГЎГ» ГЇГҐГІГ«Гї(ГіГ§ГҐГ«) Г­ГҐ Г±Г®Г§Г¤Г ГўГ Г«Г Г±Гј
 		}
 	printf("   ");
 	for (j = 0; j < m; j++)
 	{
-		printf("   %d ", j + 1); //горизонт
+		printf("   %d ", j + 1); //ГЈГ®Г°ГЁГ§Г®Г­ГІ
 	}
 	printf("\n\n");
 	for (i = 0; i < m; ++i)
 	{
-		printf(" %d ", i + 1); // вертик
+		printf(" %d ", i + 1); // ГўГҐГ°ГІГЁГЄ
 		visited[i] = false;
 
 		for (j = 0; j < m; ++j)
-			printf("%4d ", graph[i][j]); // сама матрица
+			printf("%4d ", graph[i][j]); // Г±Г Г¬Г  Г¬Г ГІГ°ГЁГ¶Г 
 		printf("\n\n");
 	}
 
 	for (i = 0; i < m; i++)
 	{
-		printf("\nВершина %d смежна с ", i + 1);
+		printf("\nГ‚ГҐГ°ГёГЁГ­Г  %d Г±Г¬ГҐГ¦Г­Г  Г± ", i + 1);
 		for (j = 0; j < m; j++) {
 			if (graph[i][j] == 1)
 				printf("%d ", j + 1);
 		}
 	}
-	printf("\nВведите вершину: ");
+	printf("\nГ‚ГўГҐГ¤ГЁГІГҐ ГўГҐГ°ГёГЁГ­Гі: ");
 	scanf_s("%d", &start);
 	while (start > m) {
-		printf("\nТакая вершина не существует!\n");
-		printf("\nВведи вершину: ");
+		printf("\nГ’Г ГЄГ Гї ГўГҐГ°ГёГЁГ­Г  Г­ГҐ Г±ГіГ№ГҐГ±ГІГўГіГҐГІ!\n");
+		printf("\nГ‚ГўГҐГ¤ГЁ ГўГҐГ°ГёГЁГ­Гі: ");
 		scanf_s("%d", &start);
 	}
 
@@ -128,13 +101,13 @@ void DFS_main()
 
 
 
-	printf("\nПорядок обхода(не рекурсия): ");
+	printf("\nГЏГ®Г°ГїГ¤Г®ГЄ Г®ГЎГµГ®Г¤Г (Г­ГҐ Г°ГҐГЄГіГ°Г±ГЁГї): ");
 	DFS_2(start - 1);
 	for (i = 0; i < m; i++) {
 		visited[i] = false;
 
 	}
-	printf("\nПорядок обхода(рекурсия):    ");
+	printf("\nГЏГ®Г°ГїГ¤Г®ГЄ Г®ГЎГµГ®Г¤Г (Г°ГҐГЄГіГ°Г±ГЁГї):    ");
 	DFS(start - 1);
 
 	system("pause");
