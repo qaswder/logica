@@ -1,0 +1,4 @@
+﻿  Source.cpp
+c:\users\пользователь\source\repos\lb_4\source.cpp(73): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+c:\users\пользователь\source\repos\lb_4\source.cpp(133): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
+  LB_4.vcxproj -> C:\Users\Пользователь\source\repos\LB_4\Debug\LB_4.exe
