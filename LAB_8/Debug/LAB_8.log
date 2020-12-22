@@ -1,0 +1,3 @@
+﻿  Source.cpp
+c:\users\пользователь\source\repos\lab_8\source.cpp(38): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  LAB_8.vcxproj -> C:\Users\Пользователь\source\repos\LAB_8\Debug\LAB_8.exe
